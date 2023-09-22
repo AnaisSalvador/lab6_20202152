@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragmentos/fragmento :: cabecera('Gtics F')"></head>
+    <body>
+    <main>
+        <div class="container px-4 py-5">
+            <h1 class="pb-2 border-bottom">Gtics F</h1>
+            <a th:href="@{/vista1/sitios}" class="btn-warning">Sitios</a><br/>
+            <a th:href="@{/vista1/equipos}" class="btn-danger">Equipos</a><br/>
+            <a th:href="@{/vista1/estadisticas}" class="btn-secondary">Estadisticas</a>
+        </div>
+    </main>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    </body>
+</html>

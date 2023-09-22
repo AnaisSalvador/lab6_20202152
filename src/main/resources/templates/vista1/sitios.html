@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragmentos/fragmento :: cabecera('Lista de Sitios')"></head>
+<body>
+<main>
+    <div class="container px-4 py-5">
+        <h1 class="pb-2 border-bottom">Lista de Sitios</h1>
+        <a th:href="@{/vista1/nuevositio}" class="btn-warning">Nuevo Sitio</a><br/>
+        <!--<div class="alert alert-primary" role="alert" th:if="${msg != null}" th:text="${msg}">
+            A simple primary alert—check it out!
+        </div>
+        <form method="post" th:action="@{/shipper/BuscarTransportistas}">
+            <input name="searchField" class="form-control mb-3" type="text" placeholder="Search"/>
+        </form>-->
+        <table class="table">
+            <tr>
+                <th>Nombre</th>
+                <th>Locacion</th>
+                <th>Fecha de instalación</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="site, info : ${sitiosList}">
+                <td th:text="${site.siteName}"></td>
+                <td th:text="${site.locationId.city + '' + site.locationId.country}"></td>
+                <td th:text="${site.installationDate}"></td>
+                <td th:text="${site.latitude}"></td>
+                <td th:text="${site.longitude}"></td>
+                <td><a class="btn btn-primary" th:href="@{'/vista1/editarsitio' + '?id=' + ${site.id}}">Editar</a></td>
+                <td><a class="btn btn-primary" th:href="@{'/vista1/delete' + '?id=' + ${site.id}}">Borrar</a></td>
+            </tr>
+        </table>
+    </div>
+</main>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
