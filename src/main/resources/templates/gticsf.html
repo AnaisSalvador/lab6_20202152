@@ -8,12 +8,6 @@
             <a th:href="@{/vista1/sitios}" class="btn-warning">Sitios</a><br/>
             <a th:href="@{/vista1/equipos}" class="btn-danger">Equipos</a><br/>
             <a th:href="@{/vista1/estadisticas}" class="btn-secondary">Estadisticas</a>
-            <div class="mt-5">
-                <p th:include="fragmentos/fragmento1 :: fr2">esto es un párrafo</p>
-            </div>
-            <div class="mt-5">
-                <p th:replace="fragmentos/fragmento1 ::  fr2">esto es un párrafo</p>
-            </div>
         </div>
     </main>
     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
